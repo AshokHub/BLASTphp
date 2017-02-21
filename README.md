@@ -4,7 +4,7 @@
 The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
 
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
-Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for detailed information.
+Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for setting BLAST parameters. If a parameter is not required and not provided, then the default value will be used. That default value may depend upon the BLAST search you are running.
 
 To use BLASTphp, first set the maximum execution time of webserver to request time of execution (RTOE) value of BLAST, because the default maximum execution time (30 seconds) is not enough. For example:
 
