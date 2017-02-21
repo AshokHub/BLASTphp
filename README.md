@@ -1,9 +1,9 @@
 ![alt tag](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
     
-# About
+# [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
 The [BLASTphp](https://github.com/AshokHub/BLASTphp) package is a PHP wrapper for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) RESTful web services remotely.
 
-# Usage
+# [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for detailed information.
 
 To use BLASTphp, first include the galaxy.inc file in your program.  For example:
@@ -30,5 +30,5 @@ The following is an example script that can be executed on the command-line. It 
 # [Usage Guidelines](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=DeveloperInfo)
 Do not overload the NCBI servers. If you are intending to perform more than 20 searches in a session you should comply with the following guidelines:
 	
-# License
+# [License](https://github.com/AshokHub/BLASTphp/blob/master/LICENSE)
 BLASTphp is made available under version 3 of the GNU Lesser General Public License.
