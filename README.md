@@ -10,7 +10,7 @@ To use BLASTphp, first set the maximum execution time of webserver to request ti
 
     ini_set('max_execution_time', $RTOE);
 
-In some cases $RTOE, A value of 0 will make the maximum execution time to unlimited.
+In some cases $RTOE is not enough to execute the program. If so, you must increase the $RTOE to $RTOE+60. A `max_execution_time` value of 0 will make the max execution time to unlimited. However, it is not recommended that you do this. In rare cases in which a script has somehow gone into an infinite loop, or is in a deadlock because of file level locking, your server will get overloaded and your memory and CPU usage will go above recommended thresholds.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
@@ -35,7 +35,7 @@ Do not overload the NCBI servers. If you are intending to perform more than 20 s
 3. Use the URL parameter email, and tool, so that we can track your project and contact you if there is a problem.
 4. Run scripts weekends or between 9 pm and 5 am Eastern Time weekday if more than 50 searches will be submitted.
 
-BLAST often runs more efficiently if multiple queries are sent as one search than if each query is sent as an individual search. This is especially true for blastn, megablast, and tblastn. If your queries are short (less than a few hundred bases) we suggest you merge them into one search of up to 10,000 bases
+BLAST often runs more efficiently if multiple queries are sent as one search than if each query is sent as an individual search. This is especially true for blastn, megablast, and tblastn. If your queries are short (less than a few hundred bases) we suggest you merge them into one search of up to 10,000 bases.
 
 The NCBI servers are a shared resource and not intended for projects that involve a large number of BLAST searches. Stand-alone BLAST and the RESTful API at a cloud provider are provided for such projects.
 	
