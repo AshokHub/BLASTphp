@@ -6,11 +6,11 @@ The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [N
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for detailed information.
 
-To use BLASTphp, first increase the maximum execution time of webserver, because the default maximum execution time of 30 seconds is not enough. For example:
+To use BLASTphp, first set the maximum execution time of webserver to request time of execution (RTOE) value of BLAST, because the default maximum execution time (30 seconds) is not enough. For example:
 
-    ini_set('max_execution_time', RTOE);
+    ini_set('max_execution_time', $RTOE);
 
-Where RTOE is the estimated time to complete BLAST execution. A value of 0 will make the maximum execution time to unlimited.
+In some cases $RTOE, A value of 0 will make the maximum execution time to unlimited.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
