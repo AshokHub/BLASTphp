@@ -10,7 +10,7 @@ To use BLASTphp, first set the maximum execution time of webserver to request ti
 
     ini_set('max_execution_time', $RTOE);
 
-In some cases `$RTOE` is not enough to execute the program. If so, you must increase the `$RTOE` to `$RTOE+60`. A `max_execution_time` value of 0 will make the max execution time to unlimited. However, it is not recommended that you do this. In rare cases in which a script has somehow gone into an infinite loop, or is in a deadlock because of file level locking, your server will get overloaded and your memory and CPU usage will go above recommended thresholds.
+In some cases `$RTOE` value will be not enough to execute the program. If so, the `$RTOE` value must be increased to `$RTOE+60` or higher. A `max_execution_time` value of `0` will make the max execution time to unlimited. However, it is not recommended that you do this. In rare cases in which a script has somehow gone into an infinite loop, or is in a deadlock because of file level locking, your server will get overloaded and your memory and CPU usage will go above recommended thresholds.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
