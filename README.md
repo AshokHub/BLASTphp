@@ -1,7 +1,7 @@
 ![alt tag](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
     
 # [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
-The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular(text) format. The default response format is HTML.
+The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
 
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for detailed information.
@@ -10,7 +10,7 @@ To use BLASTphp, first set the maximum execution time of webserver to request ti
 
     ini_set('max_execution_time', $RTOE);
 
-In some cases $RTOE is not enough to execute the program. If so, you must increase the $RTOE to $RTOE+60. A `max_execution_time` value of 0 will make the max execution time to unlimited. However, it is not recommended that you do this. In rare cases in which a script has somehow gone into an infinite loop, or is in a deadlock because of file level locking, your server will get overloaded and your memory and CPU usage will go above recommended thresholds.
+In some cases `$RTOE` is not enough to execute the program. If so, you must increase the `$RTOE` to `$RTOE+60`. A `max_execution_time` value of 0 will make the max execution time to unlimited. However, it is not recommended that you do this. In rare cases in which a script has somehow gone into an infinite loop, or is in a deadlock because of file level locking, your server will get overloaded and your memory and CPU usage will go above recommended thresholds.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
