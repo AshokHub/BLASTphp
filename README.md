@@ -1,19 +1,19 @@
 ![alt tag](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
     
 # [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
-The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP wrapper for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) RESTful web services remotely.
+The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular(text) format. The default response format is HTML.
 
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for detailed information.
 
-To use BLASTphp, first include the galaxy.inc file in your program.  For example:
+To use BLASTphp, first increase the maximum execution time of webserver, because the default maximum execution time of 30 seconds is not enough. For example:
 
-    require_once('[BLASTphp installation dir]/galaxy.inc');
+    ini_set('max_execution_time', RTOE);
 
-Where [BLASTphp installation dir] is where the BLASTphp package is installed. 
+Where RTOE is the estimated time to complete BLAST execution. A value of 0 will make the maximum execution time to unlimited.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
-## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-an-existing-galaxy-server)
+## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
 The following is an example script that can be executed on the command-line. It is contained in the examples directory of this repository and named 'check_job_status.php'.  Typically PHP scripts are not used on the command-line but here we do so for the sake of demonstration.  The following script receives as its first argument the API key of a user on the public BLAST server at https://biogem.org.  It authenticates the user using the API key, queries the remote server to find the list of workflows that the user has created and prints the names of those workflows.
 
     <?php
