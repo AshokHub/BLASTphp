@@ -1,7 +1,7 @@
-![alt tag](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
+![BLASTphp](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
     
 # [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
-The [BLASTphp](https://github.com/AshokHub/BLASTphp) is a PHP library for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
+The [BLASTphp](https://github.com/AshokHub/BLASTphp) library is a PHP wrapper for the [NCBI BLAST Common URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows you to run [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) remotely through RESTful services. BLASTphp requests to NCBI BLAST URI and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML. It consumes less bandwidth and resource.
 
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST Cloud Documentation](https://ncbi.github.io/blast-cloud/) for setting BLAST parameters. If a parameter is not required and not provided, then the default value will be used. That default value may depend upon the BLAST search you are running.
