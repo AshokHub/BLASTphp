@@ -35,6 +35,10 @@ The following is an example script to build the requests to [NCBI BLAST URL API]
 	);
 	$context  = stream_context_create($options);
 	?>
+	
+After successful execution, [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) returns response in HTML (*default*) format. The response may consist of `RID = VALUE`, `RTOE = VALUE`, `Informational`, `QBlastInfoBegin`, `QBlastInfoEnd`, `Status=WAITING`, `Status=FAILED`, `Status=UNKNOWN`, and/or `Status=READY` commands, which are used to track the result.
+
+The complete working PHP script '[blastphp.php](https://github.com/AshokHub/BLASTphp/blob/master/blastphp.php)' is included in the main directory of this repository.
 
 # [Usage Guidelines](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=DeveloperInfo)
 Do not overload the NCBI servers. If you are intending to perform more than 20 searches in a session you should comply with the following guidelines:
@@ -47,6 +51,10 @@ Do not overload the NCBI servers. If you are intending to perform more than 20 s
 BLAST often runs more efficiently if multiple queries are sent as one search than if each query is sent as an individual search. This is especially true for *blastn*, *megablast*, and *tblastn*. For short queries (less than a few hundred bases), it is suggested to merge them into one search of up to 10,000 bases.
 
 The NCBI servers are a shared resource and not intended for projects that involve a large number of BLAST searches. Stand-alone BLAST and the RESTful API at a cloud provider are provided for such projects.
-	
+
+# [Support](https://github.com/AshokHub/BLASTphp#support)
+Please feel free to sent your queries, suggestions and/or comments to [ashok.bioinformatics@gmail.com](ashok.bioinformatics@gmail.com) or [ashok@biogem.org](ashok@biogem.org).
+
+
 # [License](https://github.com/AshokHub/BLASTphp/blob/master/LICENSE)
 [BLASTphp](https://github.com/AshokHub/BLASTphp) is made available under version 3 of the GNU Lesser General Public License.
