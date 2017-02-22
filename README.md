@@ -1,5 +1,5 @@
 <p align="center">
-![BLASTphp](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
+<img src="https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png">
 </p>
 
 # [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
