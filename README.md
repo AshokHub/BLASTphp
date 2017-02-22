@@ -3,7 +3,7 @@
 # [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
 The [BLASTphp](https://github.com/AshokHub/BLASTphp) library is a PHP wrapper for the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows remote execution of the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) through RESTful services. [BLASTphp](https://github.com/AshokHub/BLASTphp) requests to [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html) and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
 
-[BLASTphp](https://github.com/AshokHub/BLASTphp) is a lightweight program which consumes less bandwidth and resource. Since NCBI BLAST is a shared resource, usage limitations apply. Projects that involve a large number of BLAST searches should use the RESTful interface at [Cloud BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=CloudBlast) or stand-alone BLAST. Currently NCBI provides a commercial BLAST server image hosted in [Amazon Web Services (AWS)](https://aws.amazon.com/marketplace/pp/B00N44P7L6), [Google Compute Engine (GCE)](https://googlegenomics.readthedocs.org/en/latest/use_cases/run_familiar_tools/ncbiblast.html), and [Microsoft Azure](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=ncbi-blast) cloud servers. This allows users to run stand-alone searches with the BLAST+ applications, submit searches through a subset of the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html), and perform searches with a simplified webpage. The server image includes a FUSE client that will download BLAST databases during the first search. The server image runs on Ubuntu Linux.
+[BLASTphp](https://github.com/AshokHub/BLASTphp) is a lightweight program which consumes less bandwidth and resource. Since [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is a shared resource, usage limitations apply. Projects that involve a large number of BLAST searches should use the RESTful interface at [Cloud BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=CloudBlast) or stand-alone BLAST. Currently [NCBI](https://www.ncbi.nlm.nih.gov/) provides a commercial BLAST server image hosted in [Amazon Web Services (AWS)](https://aws.amazon.com/marketplace/pp/B00N44P7L6), [Google Compute Engine (GCE)](https://googlegenomics.readthedocs.org/en/latest/use_cases/run_familiar_tools/ncbiblast.html), and [Microsoft Azure](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=ncbi-blast) cloud servers. This allows users to run stand-alone searches with the BLAST+ applications, submit searches through a subset of the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html), and perform searches with a simplified webpage. The server image includes a FUSE client that will download BLAST databases during the first search. The server image runs on Ubuntu Linux.
 
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST URL API Documentation](https://ncbi.github.io/blast-cloud/dev/api.html) for setting BLAST parameters. If a parameter is not required and not provided, then the default value will be used. That default value may depend upon the BLAST search you are running. [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) can be executed by simply passing `CMD`, `PROGRAM`, `DATABASE`, and `QUERY` parameters to the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html).
@@ -18,7 +18,7 @@ The query sequence must be encoded before passing through `QUERY` parameter. For
 
     urlencode($sequence);
 
-Where `urlencode()` is the built-in PHP function to encode the non-alphanumeric characters or symmbols to equivalent URL codes.
+Where `urlencode()` is the built-in PHP function to encode the non-alphanumeric characters to equivalent URL codes.
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
@@ -48,4 +48,4 @@ BLAST often runs more efficiently if multiple queries are sent as one search tha
 The NCBI servers are a shared resource and not intended for projects that involve a large number of BLAST searches. Stand-alone BLAST and the RESTful API at a cloud provider are provided for such projects.
 	
 # [License](https://github.com/AshokHub/BLASTphp/blob/master/LICENSE)
-BLASTphp is made available under version 3 of the GNU Lesser General Public License.
+[BLASTphp](https://github.com/AshokHub/BLASTphp) is made available under version 3 of the GNU Lesser General Public License.
