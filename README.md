@@ -1,6 +1,6 @@
 ![BLASTphp](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
 
-# [About](https://github.com/AshokHub/BLASTphp/blob/master/README.md)
+# [About](../README.md)
 The [BLASTphp](https://github.com/AshokHub/BLASTphp) library is a PHP wrapper for the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows remote execution of the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) through RESTful services. [BLASTphp](https://github.com/AshokHub/BLASTphp) requests to [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html) and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
 
 [BLASTphp](https://github.com/AshokHub/BLASTphp) is a lightweight program which consumes less bandwidth and resource. Since [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is a shared resource, usage limitations apply. Projects that involve a large number of BLAST searches should use the RESTful interface at [Cloud BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=CloudBlast) or stand-alone BLAST. Currently [NCBI](https://www.ncbi.nlm.nih.gov/) provides a commercial BLAST server image hosted in [Amazon Web Services (AWS)](https://aws.amazon.com/marketplace/pp/B00N44P7L6), [Google Compute Engine (GCE)](https://googlegenomics.readthedocs.org/en/latest/use_cases/run_familiar_tools/ncbiblast.html), and [Microsoft Azure](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=ncbi-blast) cloud servers. This allows users to run stand-alone searches with the BLAST+ applications, submit searches through a subset of the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html), and perform searches with a simplified webpage. The server image includes a [FUSE client](https://ncbi.github.io/blast-cloud/doc/fuse.html) that will download BLAST databases during the first search. The server image runs on Ubuntu Linux.
@@ -24,21 +24,23 @@ Where `urlencode()` is the built-in PHP function to encode the non-alphanumeric 
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
 The following is an example script to build the requests to [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html).
 
-    <?php
-    $data = array('CMD' => 'Put', 'PROGRAM' => 'blastp', 'DATABASE' => 'pdb', 'QUERY' => $encoded_query);
-	$options = array(
-	  'http' => array(
-		'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-		'method'  => 'POST',
-		'content' => http_build_query($data)
-	  )
-	);
-	$context  = stream_context_create($options);
-	?>
+```php
+<?php
+$data = array('CMD' => 'Put', 'PROGRAM' => 'blastp', 'DATABASE' => 'pdb', 'QUERY' => $encoded_query);
+$options = array(
+  'http' => array(
+    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+    'method'  => 'POST',
+    'content' => http_build_query($data)
+  )
+);
+$context  = stream_context_create($options);
+?>
+```
 	
 After successful execution, [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) returns response in HTML (*default*) format. The response may consist of `RID = VALUE`, `RTOE = VALUE`, `Informational`, `QBlastInfoBegin`, `QBlastInfoEnd`, `Status=WAITING`, `Status=FAILED`, `Status=UNKNOWN`, and/or `Status=READY` commands, which are used to track the result.
 
-The complete working PHP script '[blastphp.php](https://github.com/AshokHub/BLASTphp/blob/master/blastphp.php)' is included in the main directory of this repository.
+The complete working PHP script '[blastphp.php](../blastphp.php)' is included in the main directory of this repository.
 
 # [Usage Guidelines](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=DeveloperInfo)
 Do not overload the NCBI servers. If you are intending to perform more than 20 searches in a session you should comply with the following guidelines:
