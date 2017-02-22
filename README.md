@@ -27,11 +27,11 @@ The following is an example script that can be executed on the command-line. It 
     <?php
     $data = array('CMD' => 'Put', 'PROGRAM' => 'blastp', 'DATABASE' => 'pdb', 'QUERY' => $encoded_query);
 	$options = array(
-		'http' => array(
-			'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-			'method'  => 'POST',
-			'content' => http_build_query($data)
-		)
+	  'http' => array(
+		'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+		'method'  => 'POST',
+		'content' => http_build_query($data)
+	  )
 	);
 	$context  = stream_context_create($options);
 	?>
