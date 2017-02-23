@@ -26,7 +26,7 @@ Where `urlencode()` is the built-in PHP function to encode the non-alphanumeric 
 
 # [Example](https://github.com/AshokHub/BLASTphp#example)
 ## [Connecting to NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#connecting-to-ncbi-blast-server)
-The following is an example script to build the requests to [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html).
+The following is an example script to build the requests to [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi).
 
 ```php
 <?php
@@ -39,10 +39,28 @@ $options = array(
   )
 );
 $context  = stream_context_create($options);
+$result = file_get_contents("https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi", false, $context);
 ?>
 ```
 	
-After successful execution, [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) returns response in HTML (*default*) format. The response may consist of `RID = VALUE`, `RTOE = VALUE`, `Informational`, `QBlastInfoBegin`, `QBlastInfoEnd`, `Status=WAITING`, `Status=FAILED`, `Status=UNKNOWN`, and/or `Status=READY` commands, which are used to track the result.
+The response may consist of `RID = VALUE`, `RTOE = VALUE`, `Informational`, `QBlastInfoBegin`, `QBlastInfoEnd`, `Status=WAITING`, `Status=FAILED`, `Status=UNKNOWN`, and/or `Status=READY` commands, which are used to track the result.
+
+## [Retrieving from NCBI BLAST Server](https://github.com/AshokHub/BLASTphp#retrieving-from-ncbi-blast-server)
+The following is an example script to retrieve response from the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi).
+
+```php
+<?php
+$option = array(
+  'http' => array(
+  	'method' => 'GET'
+  )
+);
+$content = stream_context_create($option);
+$output = file_get_contents("https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Get&RID=$rid", false, $content);
+?>
+```
+
+After successful execution, [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) returns response in HTML (*default*) format. To get different types of response, you must specify the file type in the URL. For example, `FORMAT_TYPE=Text` for plain text file format.
 
 The complete working PHP script '[blastphp.php](../master/blastphp.php)' is included in the main directory of this repository.
 
