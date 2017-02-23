@@ -64,7 +64,7 @@ If there is a problem with a request, [NCBI BLAST](https://blast.ncbi.nlm.nih.go
 If the operation was successful, the HTTP status code will be 200 (OK). If the server encounters an error, it will return an HTTP status code that gives some indication of what went wrong; possibly along with, depending on the output format (such as in a <Fault> tag in XML), some additional more human-readable detail message(s). The codes in the 400-range are errors on the client side, and those in the 500 range indicate a problem on the server side; the codes currently in use are:
 
 | HTTP Status | Error Code | General Error Category |
-|    :---:    |    :---:   | :---                   |
+|    :---:    |    :---:   | ---------------------- |
 | 200 | (none) | Success |
 | 202 | (none) | Accepted (asynchronous operation pending) |
 | 400 | PUGREST.BadRequest | Request is improperly formed (syntax error in the URL, POST body, etc.) |
