@@ -1,7 +1,7 @@
 ![BLASTphp](https://raw.githubusercontent.com/AshokHub/BLASTphp/misc/BLASTphp_Logo_500px.png)
 
 # [About](../master/README.md)
-The [BLASTphp](https://github.com/AshokHub/BLASTphp) library is a PHP wrapper for the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows remote execution of the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) through RESTful services. [BLASTphp](https://github.com/AshokHub/BLASTphp) requests to [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html) and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
+The [BLASTphp](https://github.com/AshokHub/BLASTphp) library is a PHP wrapper for the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html). It allows remote execution of the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) through RESTful services. [BLASTphp](https://github.com/AshokHub/BLASTphp) requests to [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) through HTTP/HTTPS interface and elicits a response in HTML, Text, XML, XML2, JSON2, or Tabular (text) format. The default response format is HTML.
 
 [BLASTphp](https://github.com/AshokHub/BLASTphp) is a lightweight program which consumes less bandwidth and resource. Since [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is a shared resource, usage limitations apply. Projects that involve a large number of BLAST searches should use the RESTful interface at [Cloud BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=CloudBlast) or stand-alone BLAST. Currently [NCBI](https://www.ncbi.nlm.nih.gov/) provides a commercial BLAST server image hosted in [Amazon Web Services (AWS)](https://aws.amazon.com/marketplace/pp/B00N44P7L6), [Google Compute Engine (GCE)](https://googlegenomics.readthedocs.org/en/latest/use_cases/run_familiar_tools/ncbiblast.html), and [Microsoft Azure](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=ncbi-blast) cloud servers. This allows users to run stand-alone searches with the BLAST+ applications, submit searches through a subset of the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html), and perform searches with a simplified webpage. The server image includes a [FUSE client](https://ncbi.github.io/blast-cloud/doc/fuse.html) that will download BLAST databases during the first search. The server image runs on Ubuntu Linux.
 
@@ -54,12 +54,29 @@ Do not overload the NCBI servers. If you are intending to perform more than 20 s
 3. Use the URL parameter email, and tool, so that we can track your project and contact you if there is a problem.
 4. Run scripts weekends or between 9 pm and 5 am Eastern Time weekday if more than 50 searches will be submitted.
 
-BLAST often runs more efficiently if multiple queries are sent as one search than if each query is sent as an individual search. This is especially true for *blastn*, *megablast*, and *tblastn*. For short queries (less than a few hundred bases), it is suggested to merge them into one search of up to 10,000 bases.
+[NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) often runs more efficiently if multiple queries are sent as one search than if each query is sent as an individual search. This is especially true for *blastn*, *megablast*, and *tblastn*. For short queries (less than a few hundred bases), it is suggested to merge them into one search of up to 10,000 bases.
 
-The NCBI servers are a shared resource and not intended for projects that involve a large number of BLAST searches. Stand-alone BLAST and the RESTful API at a cloud provider are provided for such projects.
+The [NCBI](https://www.ncbi.nlm.nih.gov/) servers are a shared resource and not intended for projects that involve a large number of BLAST searches. Stand-alone BLAST and the RESTful API at a cloud provider are provided for such projects.
+
+# [Error Handling](https://github.com/AshokHub/BLASTphp#error-handling)
+If there is a problem with a request, [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) REST (REpresentational State Transfer) will usually return some sort of human-readable message indicating what went wrong – whether it’s an invalid input, or nothing was found for the given query, or the request was too broad and took too long to complete (more than 30 seconds, the [NCBI](https://www.ncbi.nlm.nih.gov/) standard time limit on web service requests), etc.
+
+If the operation was successful, the HTTP status code will be 200 (OK). If the server encounters an error, it will return an HTTP status code that gives some indication of what went wrong; possibly along with, depending on the output format (such as in a <Fault> tag in XML), some additional more human-readable detail message(s). The codes in the 400-range are errors on the client side, and those in the 500 range indicate a problem on the server side; the codes currently in use are:
+
+| HTTP Status | Error Code | General Error Category |
+|    :---:    |    :---:   | :---                   |
+| 200 | (none) | Success |
+| 202 | (none) | Accepted (asynchronous operation pending) |
+| 400 | PUGREST.BadRequest | Request is improperly formed (syntax error in the URL, POST body, etc.) |
+| 404 | PUGREST.NotFound | The input record was not found (e.g. invalid RID) |
+| 405 | PUGREST.MethodNotAllowed | Request not allowed (such as invalid MIME type in the HTTP Accept header) |
+| 504 | PUGREST.Timeout | The request timed out, from server overload or too broad a request |
+| 501 | PUGREST.Unimplemented | The requested operation has not (yet) been implemented by the server |
+| 500 | PUGREST.ServerError | Some problem on the server side (such as a database server down, etc.) |
+| 500 | PUGREST.Unknown | An unknown error occurred |
 
 # [Support](https://github.com/AshokHub/BLASTphp#support)
-Please feel free to sent your queries, suggestions and/or comments to [ashok.bioinformatics@gmail.com](ashok.bioinformatics@gmail.com) or [ashok@biogem.org](ashok@biogem.org).
+Please feel free to sent your queries, suggestions and/or comments related to [BLASTphp](https://github.com/AshokHub/BLASTphp) program to [ashok.bioinformatics@gmail.com](ashok.bioinformatics@gmail.com) or [ashok@biogem.org](ashok@biogem.org).
 
 
 # [License](https://github.com/AshokHub/BLASTphp/blob/master/LICENSE)
