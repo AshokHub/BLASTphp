@@ -8,7 +8,7 @@ Since [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is a shared resourc
 # [Usage](https://ncbi.github.io/blast-cloud/doc/running-web-blast.html)
 Please refer to [NCBI BLAST URL API Documentation](https://ncbi.github.io/blast-cloud/dev/api.html) for setting BLAST parameters. If a parameter is not required and not provided, then the default value will be used. That default value may depend upon the BLAST search you are running. [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) can be executed by simply passing `CMD`, `PROGRAM`, `DATABASE`, and `QUERY` parameters to the [NCBI BLAST URL API](https://ncbi.github.io/blast-cloud/dev/api.html).
 
-To use [BLASTphp](https://github.com/AshokHub/BLASTphp) using webserver, first set the maximum execution time of webserver to request time of execution (RTOE) value of BLAST, because the default maximum execution time (30 seconds) is not enough. For example,
+To use [BLASTphp](https://github.com/AshokHub/BLASTphp) through a webserver, first set the maximum execution time of webserver to request time of execution (RTOE) value of BLAST, because the default maximum execution time (30 seconds) is not enough. For example,
 
 ```php
 ini_set('max_execution_time', $RTOE);
