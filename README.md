@@ -85,13 +85,13 @@ If the operation was successful, the HTTP status code will be 200 (OK). If the s
 |    :---:    |    :---:   | ---------------------- |
 | 200 | (none) | Success |
 | 202 | (none) | Accepted (asynchronous operation pending) |
-| 400 | PUGREST.BadRequest | Request is improperly formed (syntax error in the URL, POST body, etc.) |
-| 404 | PUGREST.NotFound | The input record was not found (e.g. invalid RID) |
-| 405 | PUGREST.MethodNotAllowed | Request not allowed (such as invalid MIME type in the HTTP Accept header) |
-| 504 | PUGREST.Timeout | The request timed out, from server overload or too broad a request |
-| 501 | PUGREST.Unimplemented | The requested operation has not (yet) been implemented by the server |
-| 500 | PUGREST.ServerError | Some problem on the server side (such as a database server down, etc.) |
-| 500 | PUGREST.Unknown | An unknown error occurred |
+| 400 | Bad Request | Request is improperly formed (syntax error in the URL, POST body, etc.) |
+| 404 | Not Found | The input record was not found (e.g. invalid RID) |
+| 405 | Method Not Allowed | Request not allowed (such as invalid MIME type in the HTTP Accept header) |
+| 504 | Timeout | The request timed out, from server overload or too broad a request |
+| 501 | Unimplemented | The requested operation has not (yet) been implemented by the server |
+| 500 | Server Error | Some problem on the server side (such as a database server down, etc.) |
+| 500 | Unknown | An unknown error occurred |
 
 # [Support](https://github.com/AshokHub/BLASTphp#support)
 Please feel free to sent your queries, suggestions and/or comments related to [BLASTphp](https://github.com/AshokHub/BLASTphp) program to [ashok.bioinformatics@gmail.com](ashok.bioinformatics@gmail.com) or [ashok@biogem.org](ashok@biogem.org).
