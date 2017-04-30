@@ -68,6 +68,9 @@ $rtoe = str_replace("RTOE=", "", $rtoe);
 // Maximum execution time of webserver (optional)
 //ini_set('max_execution_time', $rtoe+60);
 
+//converting string to long (sleep() expects a long)
+$rtoe = $rtoe + 0;
+
 // Wait for search to complete
 sleep($rtoe);
 
