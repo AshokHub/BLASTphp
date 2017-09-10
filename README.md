@@ -101,4 +101,4 @@ Please feel free to sent your queries, suggestions and/or comments related to [B
 [BLASTphp](https://github.com/AshokHub/BLASTphp) is made available under version 3 of the GNU Lesser General Public License.
 
 # [Citation](https://github.com/AshokHub/BLASTphp#citation)
-Ashok Kumar, T., and Rajagopal, B. (2017). BLASTphp: a PHP wrapper for NCBI BLAST API. *International Journal for Computational Biology*. 6(1): 31-33. [[Abstract]](http://ijcb.in/ijcb/v1/index.php/ijcb/article/view/75) [[PDF]](http://ijcb.in/ijcb/v1/index.php/ijcb/article/viewFile/75/82)
+Ashok Kumar, T., and Rajagopal, B. (2017). BLASTphp: a PHP wrapper for NCBI BLAST API. [*International Journal for Computational Biology*](http://ijcb.in). 6(1): 31-33. [[Abstract]](http://ijcb.in/ijcb/v1/index.php/ijcb/article/view/75) [[PDF]](http://ijcb.in/ijcb/v1/index.php/ijcb/article/viewFile/75/82)
