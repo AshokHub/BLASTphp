@@ -27,17 +27,26 @@
 # ===========================================================================
 
 // Path of the query sequence (modify)
-$query = "C:\\Users\\ashok\\Desktop\\BLASTphp\\protein.fas";
+$file = "C:\\Users\\ashok\\Desktop\\BLASTphp\\protein.fas";
 
-// Read and encode the queries
-$encoded_query = '';
-$handle = fopen($query, "r");
-if ($handle) {
-  while (($line = fgets($handle)) !== false) {
-    $encoded_query .= urlencode($line);
+// Read FASTA sequence from the HTML textbox and encode
+//$encoded_query = urlencode($_POST["sequence"]);
+
+// Read FASTA file through HTML file upload or directly and encode
+function fas_read($file) {
+  $query = '';
+  $handle = fopen($file, "r");
+  if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+      $query .= urlencode($line);
+    }
+    fclose($handle);
   }
-  fclose($handle);
+  return $query;
 }
+	
+//$encoded_query = fas_read($_FILES["file"]["tmp_name"]);
+$encoded_query = fas_read($file);
 
 // Build the request
 $data = array('CMD' => 'Put', 'PROGRAM' => 'blastp', 'DATABASE' => 'pdb', 'QUERY' => $encoded_query);
